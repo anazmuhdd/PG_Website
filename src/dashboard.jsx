@@ -22,7 +22,10 @@ export default function DashboardPage({ username: propUserName, whatsapp_id: pro
       navigate("/login");
     } else {
       // Save to localStorage so refresh keeps the user logged in
-      localStorage.setItem("loggedInUser", JSON.stringify({ userName, whatsapp_id: whatsappId }));
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify({ userName, whatsapp_id: whatsappId })
+      );
     }
   }, [userName, whatsappId, navigate]);
 

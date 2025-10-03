@@ -49,18 +49,24 @@ export default function Login() {
   return () => { mounted = false; };
 }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!selectedUserId) {
-      alert("Please select a user.");
-      return;
-    }
-    const selectedUser = users.find((u) => u.id === selectedUserId);
-    const userName = selectedUser?.username || selectedUserId;
-    const whatsapp_id = selectedUser?.whatsapp_id;
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  if (!selectedUserId) {
+    alert("Please select a user.");
+    return;
+  }
+  const selectedUser = users.find((u) => u.id === selectedUserId);
+  const userName = selectedUser?.username || selectedUserId;
+  const whatsapp_id = selectedUser?.whatsapp_id;
 
-    navigate("/dashboard", { state: { userid: selectedUserId, username: userName, whatsapp_id } });
-  };
+  // Save to localStorage before navigating
+  localStorage.setItem(
+    "loggedInUser",
+    JSON.stringify({ userName, whatsapp_id })
+  );
+
+  navigate("/dashboard", { state: { userid: selectedUserId, username: userName, whatsapp_id } });
+};
 
   return (
     <div
