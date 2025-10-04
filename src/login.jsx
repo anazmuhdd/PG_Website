@@ -99,14 +99,6 @@ export default function Login() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="bg-white/10 backdrop-blur-sm shadow-2xl rounded-3xl p-8 max-w-md w-full border border-white/20">
-        
-        {/* PG Logo on top */}
-        <img
-          src="/images/pg-logo.png"
-          alt="PG Logo"
-          className="w-20 h-20 mx-auto mb-4 rounded-full shadow-lg"
-        />
-
         <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
           Vanakkam avarukale <span className="text-blue-600">RajaHamsam</span>
         </h2>
