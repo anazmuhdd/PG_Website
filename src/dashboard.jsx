@@ -51,7 +51,7 @@ export default function DashboardPage({ username: propUserName, whatsapp_id: pro
     setLoading(true);
     setError("");
 
-    const res = await fetch(`https://pg-app-backend.onrender.com/orders/${whatsappId}/${month}`);
+    const res = await fetch(`https://pg-app-backend-7pq9.onrender.com/orders/${whatsappId}/${month}`);
 
     if (!res.ok) {
       if (res.status === 500 && attempt < MAX_RETRIES) {
