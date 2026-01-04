@@ -45,7 +45,7 @@ export default function Login() {
       setFetchError("");
 
       try {
-        const res = await fetch("https://pg-app-backend.onrender.com/users");
+        const res = await fetch("https://pg-app-backend-7pq9.onrender.com/users");
         if (!res.ok) {
           if (res.status === 500 && attempt < MAX_RETRIES) {
             console.warn(`Server error 500, retrying attempt ${attempt}...`);
